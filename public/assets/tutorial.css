@@ -1,0 +1,110 @@
+
+.modal--inner h2 {
+    margin: 0;
+}
+.modal--inner p {
+    font-size: 1.4rem;
+}
+
+.modal--button-container {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 0 30%;
+}
+
+.modal--button-container button:hover {
+    color: hsla(338, 75%, 64%, 1);
+}
+
+.modal--button-container button {
+    background: #f7f7f7;
+    border: 0;
+    font-family: 'JetBrains Mono', 'Courier New', Courier, monospace;
+    z-index: 1;
+    cursor: pointer;
+    font-size: 1.25rem;
+    transition: color 0.2s;
+}
+.modal--button-container button::before {
+    content: "["
+}
+.modal--button-container button::after {
+    content: "]"
+}
+
+.edit-tutorial--pulse {
+    position: fixed;
+    width: 1.5em;
+    height: 1.5em;
+    background: #ff2d2d;
+    border-radius: 100%;
+    z-index: 9999;
+    animation: shadowpulse 1s infinite;
+    pointer-events: all;
+}
+
+.edit-tutorial--pulse::before {
+    content: "";
+    position: absolute;
+    width: 3.5em;
+    height: 3.5em;
+    top: -1em;
+    left: -1em;
+    border-radius: 100%;
+}
+
+.edit-tutorial--pulse-tip {
+    position: absolute;
+    border-radius: 0.75em;
+    top: 0;
+    left: 0;
+    background-color: inherit;
+    color: #f7f7f7;
+    padding: 1em;
+    transform: scale(0);
+    opacity: 0;
+    transition: opacity 0.25s;
+    width: 80ch;
+    max-width: 100vw;
+    font-size: 1.1rem;
+    pointer-events: none;
+}
+
+.edit-tutorial--pulse-tip.collapsed {
+    display: none;
+}
+
+.edit-tutorial--pulse-tip button {
+    font: inherit;
+    font-family: 'JetBrains Mono', monospace;
+    color: inherit;
+    border: 0;
+    background: 0;
+    border-radius: 9999px;
+    border: 2px solid #f7f7f7;
+}
+
+.edit-tutorial--pulse:hover {
+    animation: none;
+}
+
+.edit-tutorial--pulse:hover .edit-tutorial--pulse-tip {
+    opacity: 1;
+    transform: scale(1);
+    pointer-events: initial;
+}
+
+@keyframes shadowpulse {
+    0% {
+        box-shadow: #ce292955 0 0 0 0.5em;
+    }
+    80% {
+        box-shadow: #2991ce00 0 0 0 1em;
+    }
+    90% {
+        box-shadow: #2991ce1f 0 0 0 0.2em;
+    }
+    100% {
+        box-shadow: #2991ce55 0 0 0 0.5em;
+    }
+}
